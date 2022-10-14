@@ -4,6 +4,7 @@ import "./BoardContent.scss";
 import { initData } from "../../actions/initData";
 import _ from "lodash";
 import { mapOrder } from "../../utils/sorts";
+import { Container, Draggable } from "react-smooth-dnd";
 
 const BoardContent = () => {
   const [board, setBoard] = useState({});
@@ -14,9 +15,15 @@ const BoardContent = () => {
     if (boardInitData) {
       setBoard(boardInitData);
 
-      setColumns(mapOrder(boardInitData.columns, boardInitData.columnOrder, "id"));
+      setColumns(
+        mapOrder(boardInitData.columns, boardInitData.columnOrder, "id")
+      );
     }
   }, []);
+
+  const onColumnDrop = (dropResult) => {
+    console.log(">>>>>> onColumnDrop", dropResult);
+  };
 
   if (_.isEmpty(board)) {
     return <div className="not-found">Board not found</div>;
@@ -25,11 +32,27 @@ const BoardContent = () => {
   return (
     <>
       <div className="board-columns">
-        {columns &&
-          columns.length > 0 &&
-          columns.map((column, index) => {
-            return <Column key={column.id} column={column} />;
-          })}
+        <Container
+          orientation="horizontal"
+          onDrop={onColumnDrop}
+          dragHandleSelector=".column-drag-handle"
+          getChildPayload={(index) => columns[index]}
+          dropPlaceholder={{
+            animationDuration: 150,
+            showOnTop: true,
+            className: "column-drop-preview",
+          }}
+        >
+          {columns &&
+            columns.length > 0 &&
+            columns.map((column, index) => {
+              return (
+                <Draggable key={column.id}>
+                  <Column column={column} />
+                </Draggable>
+              );
+            })}
+        </Container>
       </div>
     </>
   );

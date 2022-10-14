@@ -4,10 +4,17 @@ import "./Card.scss";
 const Card = (props) => {
   const { card } = props;
   return (
-    <li className="card-item">
-      {card.Image && <img className="card-cover" src={card.Image} alt="card" />}
+    <div className="card-item">
+      {card.Image && (
+        <img
+          className="card-cover"
+          src={card.Image}
+          alt="card"
+          onMouseDown={(e) => e.preventDefault()}
+        />
+      )}
       {card.title}
-    </li>
+    </div>
   );
 };
 

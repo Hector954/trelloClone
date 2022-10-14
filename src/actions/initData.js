@@ -23,7 +23,7 @@ export const initData = {
               boardId: "board-1",
               columnId: "column-1",
               title: "title card 1",
-              Image: "https://via.placeholder.com/250",
+              Image: "https://raw.githubusercontent.com/haryphamdev/sharing-host-files/master/trello/img-design.png",
             },
             {
               id: "card-2",
