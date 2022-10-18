@@ -1,11 +1,10 @@
 import React from 'react'
 import './Appbar.scss'
 
-const Appbar = () => {
+const Appbar = (props) => {
+  const { title } = props
   return (
-    <>
-          <nav className="navbar-app"> App bar </nav>
-    </>
+          <nav className="navbar-app">{title}</nav>
   )
 }
 

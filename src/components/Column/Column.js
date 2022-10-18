@@ -126,7 +126,6 @@ const Column = (props) => {
                 size="sm"
               ></Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Add card</Dropdown.Item>
                 <Dropdown.Item onClick={toggleModal}>
                   Remove this column ...
                 </Dropdown.Item>

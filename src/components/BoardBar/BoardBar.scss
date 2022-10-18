@@ -1,9 +1,29 @@
-@import '../../settings';
+@import "../../settings";
 
 .navbar-board {
-    padding: $gap;
-    display: flex;
-    align-items: center;
-    font-size: 1.1rem;
-    background-color: $navbar-board-bg-color;
-  }
+  display: flex;
+  align-items: center;
+
+  font-size: 1.1rem;
+  background-color: $navbar-board-bg-color;
+}
+
+.board-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+}
+
+.img-user {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.user-name{
+  font-size: 1.5rem;
+  font-weight: 600;
+}

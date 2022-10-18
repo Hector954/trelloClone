@@ -13,7 +13,7 @@ body {
 .trello-master {
   height: 100vh;
   display: grid;
-  grid-template-rows: 40px 50px 1fr;
+  grid-template-rows: 100px 50px 1fr;
   background-color: $board-bg-color;
   color: $app-main-color;
 
@@ -31,5 +31,17 @@ body {
     }
 
     background-color: inherit;
+  }
+}
+
+.App {
+  height: 100vh;
+  background-color: $board-bg-color;
+  .App-header {
+    background-color: $navbar-app-bg-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
   }
 }
