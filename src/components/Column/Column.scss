@@ -14,19 +14,69 @@
 
   > * {
     background-color: $list-bg-color;
-    color: #333;
+    color: $app-main-color;
     padding: 0 8px;
   }
 
   header {
     padding-left: 15px;
     height: $column-header-height;
-    line-height: $column-header-height;
+    // line-height: $column-header-height;
     font-size: 16px;
     font-weight: bold;
     border-top-left-radius: $column-border-radius;
     border-top-right-radius: $column-border-radius;
     cursor: pointer;
+  }
+
+  .add-new-card {
+    padding-bottom: 10px;
+    .group-btn {
+      display: flex;
+      padding-top: 10px;
+      align-items: center;
+
+      i {
+        font-size: 30px;
+        padding-left: 10px;
+        cursor: pointer;
+        color: #b3b3b3;
+      }
+    }
+  }
+
+  .column-drag-handle {
+    display: flex;
+    padding-right: 3px;
+    padding-top: 5px;
+    padding-left: 10px;
+
+    .column-title {
+      width: 90%;
+    }
+
+    .column-dropdown {
+      width: 10%;
+
+      .dropdown-toggle {
+        padding: 2px 7px;
+        &::after {
+          content: "...";
+          border: none !important;
+          box-shadow: none !important;
+          outline: none !important;
+        }
+
+        &:hover {
+          background-color: #091e4214;
+        }
+
+        &:focus {
+          outline: none !important;
+          box-shadow: none !important;
+        }
+      }
+    }
   }
 
   footer {
@@ -35,6 +85,16 @@
     line-height: $column-footer-height;
     border-bottom-left-radius: $column-border-radius;
     border-bottom-right-radius: $column-border-radius;
+    color: #888;
+  }
+
+  .footer-action {
+    margin-left: 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: $app-main-color;
+    }
   }
 
   div.card-list {
@@ -63,6 +123,7 @@
     .card-ghost {
       transition: transform 0.18s ease;
       transform: rotateZ(5deg);
+      font-weight: bold;
     }
 
     .card-ghost-drop {
